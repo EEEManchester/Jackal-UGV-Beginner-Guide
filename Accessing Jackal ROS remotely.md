@@ -85,7 +85,7 @@ Find the name of the WiFi your remote PC is connected to and move the pointer to
 #### 2.3.3 Connect
 - Make sure the correct WiFi network is highlighted.
 - Connect to the WiFi by pressing *C*.
-- If all successful, you should see a status text at the bottom of the console: Connected to *your WiFi hotspot name* at *signal strength %* (IP: *your static IP address*)
+- If all successful, you should see a status text at the bottom of the console: Connected to {*wifi_name*} at {*signal_strength*}% (IP: {*ip_address*})
 
 ### 2.4 Connect to Jackal ROS on remote PC
 #### 2.4.1 Configure host file
