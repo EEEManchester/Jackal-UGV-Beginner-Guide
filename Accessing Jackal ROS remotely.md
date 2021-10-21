@@ -60,9 +60,10 @@ Press the power button on the HMI panel located at the rear of the vehicle.
 - Undo the User Tray Thumbscrews.
 - You should find the Integrated Computor in the User Tray.
 - Plug your Monitor, Keyboard and Mouse to the Integrated Computor.
+- Login to Administrator account with your password. The default is `clearpath`.
 
 ### 2.2 Setup a WiFi hotspot
-There are two options here. You can either use a router or [use your PC's wireless adapter to setup a WiFi hotspot](https://www.linuxuprising.com/2018/09/how-to-create-wi-fi-hotspot-in-ubuntu.html). Once your PC is connected to the WiFi network or started the WiFi hotspot, you need to find out your IP address on your remote PC.
+There are two options here. You can either use a router or [use your PC's wireless adapter to setup a WiFi hotspot](https://www.linuxuprising.com/2018/09/how-to-create-wi-fi-hotspot-in-ubuntu.html). Once your PC is connected to the WiFi network or has started the WiFi hotspot, you need to find out your IP address on your remote PC.
 ```
 ip a
 ```
@@ -89,13 +90,15 @@ Find the name of the WiFi your remote PC is connected to and move the pointer to
 
 ### 2.4 Connect to Jackal ROS on remote PC
 #### 2.4.1 Configure host file
+Note: Change the IP address to your jackal's wireless IP address.
 ```
-echo '10.25.50.2 cpr-jackal' | sudo tee -a /etc/hosts
+echo '10.25.50.2 cpr-jackal' | sudo tee -a /etc/hosts # Your jackal’s wireless IP address
 ```
 #### 2.4.2 Configure ROS
+Note: Change the IP address to your PC's wireless IP address
 ```
 export ROS_MASTER_URI=http://cpr-jackal:11311 # Jackal hostname
-export ROS_IP=10.25.50.1 # Your laptop’s wireless IP address
+export ROS_IP=10.25.50.1 # Your PC’s wireless IP address
 ```
 
 If you want to avoid repeating the above command for every new terminal instance, you can create a script, e.g. remote-jackal.sh, with the above commands, then source it.
